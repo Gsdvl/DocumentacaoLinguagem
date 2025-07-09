@@ -61,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#estrutura-da-ast-astc" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -261,6 +266,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    AST
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -273,6 +293,163 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura Geral
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criao-de-ns-da-ast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criao de Ns da AST
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Criao de Ns da AST">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-ns-literais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de Ns Literais
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expresses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expresses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blocos-e-controle-de-fluxo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blocos e Controle de Fluxo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrada-e-sada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrada e Sada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrays
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estruturas-de-suporte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estruturas de Suporte
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estruturas de Suporte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#astnodelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      AstNodeList
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argumentnode" class="md-nav__link">
+    <span class="md-ellipsis">
+      ArgumentNode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liberao-de-memria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Liberao de Memria
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observaes-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observaes Importantes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplos-futuros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplos futuros
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -317,6 +494,154 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#estrutura-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura Geral
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criao-de-ns-da-ast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criao de Ns da AST
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Criao de Ns da AST">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-ns-literais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de Ns Literais
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expresses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expresses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blocos-e-controle-de-fluxo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blocos e Controle de Fluxo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrada-e-sada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrada e Sada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrays
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estruturas-de-suporte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estruturas de Suporte
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estruturas de Suporte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#astnodelist" class="md-nav__link">
+    <span class="md-ellipsis">
+      AstNodeList
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argumentnode" class="md-nav__link">
+    <span class="md-ellipsis">
+      ArgumentNode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liberao-de-memria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Liberao de Memria
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observaes-importantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observaes Importantes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplos-futuros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplos futuros
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -332,9 +657,128 @@
 
 
 
-  <h1>AST</h1>
-
-
+<p>Documentação da AST</p>
+<h1 id="estrutura-da-ast-astc">Estrutura da AST (<code>ast.c</code>)</h1>
+<p>Este mdulo implementa as funes de construo e gerenciamento da <strong>rvore de Sintaxe
+Abstrata (AST)</strong> da linguagem. Ele responsvel por representar a estrutura lgica do
+cdigo-fonte aps a anlise sinttica, permitindo que fases posteriores como anlise semntica
+e interpretao/executao sejam realizadas.</p>
+<h2 id="estrutura-geral">Estrutura Geral</h2>
+<ul>
+<li><strong>Arquivo:</strong> <code>ast.c</code></li>
+<li><strong>Cabealhos:</strong> <code>#include "ast.h"</code></li>
+<li><strong>Uso de memria:</strong> Todas as alocaes so feitas via <code>malloc</code>, <code>realloc</code>, <code>strdup</code>, e
+liberadas com <code>free</code>.</li>
+<li><strong>Origem da linha:</strong> Cada n da AST marcado com a varivel global <code>yylineno</code> (linha
+atual do lexer/parser).</li>
+</ul>
+<h2 id="criao-de-ns-da-ast">Criao de Ns da AST</h2>
+<p>Todos os ns so derivados de <code>AstNode</code> e criados com uma funo base:
+static AstNode* create_base_node(AstNodeType type, size_t size);
+Ela aloca memria, atribui o tipo do n e o nmero da linha.</p>
+<h3 id="tipos-de-ns-literais">Tipos de Ns Literais</h3>
+<p>| Funo | Tipo de N | Descrio
+|
+|----------------------------------|----------------------------------|-----------------
+-----------------------|
+| <code>create_int_literal_node(int)</code> | <code>NODE_TYPE_INT_LITERAL</code> | Representa um
+nmero inteiro. |
+| <code>create_float_literal_node(float)</code> | <code>NODE_TYPE_FLOAT_LITERAL</code> | Representa um
+nmero de ponto flutuante. |
+| <code>create_string_literal_node(char*)</code> | <code>NODE_TYPE_STRING_LITERAL</code> | Representa uma
+string. |
+| <code>create_identifier_node(char*)</code> | <code>NODE_TYPE_IDENTIFIER</code> | Representa um
+identificador (nome). |</p>
+<h3 id="expresses">Expresses</h3>
+<p>| Funo | Tipo de N | Descrio
+|
+|-----------------------------------------------|-----------------------------|---------
+-----------------------------------|
+| <code>create_assignment_node(target, op, expr)</code> | <code>NODE_TYPE_ASSIGNMENT</code> | Atribuio
+com operador (ex: <code>+=</code>). |
+| <code>create_binary_op_node(left, op, right)</code> | <code>NODE_TYPE_BINARY_OP</code> | Operao
+binria (<code>+</code>, <code>-</code>, etc). |
+| <code>create_unary_op_node(op, operand)</code> | <code>NODE_TYPE_UNARY_OP</code> | Operao
+unria (<code>!</code>, <code>-</code>, etc). |
+| <code>create_expression_statement_node(expr)</code> | <code>NODE_TYPE_EXPRESSION_STATEMENT</code> |
+Expresso isolada como instruo. |</p>
+<h3 id="blocos-e-controle-de-fluxo">Blocos e Controle de Fluxo</h3>
+<p>| Funo | Tipo de N | Descrio
+|
+|---------------------------------------------|---------------------------|-------------
+------------------------------|
+| <code>create_block_node(statements)</code> | <code>NODE_TYPE_BLOCK</code> | Bloco de
+mltiplas instrues. |
+| <code>create_if_statement_node(cond, then, else)</code>| <code>NODE_TYPE_IF_STATEMENT</code> | Condicional
+<code>if</code>/<code>else</code>. |
+| <code>create_while_node(cond, body)</code> | <code>NODE_TYPE_WHILE_LOOP</code> | Lao <code>while</code>.
+|
+| <code>create_for_node(init, cond, incr, body)</code> | <code>NODE_TYPE_FOR_LOOP</code> | Lao <code>for</code>.
+|
+| <code>create_break_statement_node()</code> | <code>NODE_TYPE_BREAK_STATEMENT</code> | Interrupo
+de lao. |
+| <code>create_return_statement_node(expr)</code> | <code>NODE_TYPE_RETURN_STATEMENT</code> | Retorno
+de funo. |</p>
+<h3 id="entrada-e-sada">Entrada e Sada</h3>
+<p>| Funo | Tipo de N | Descrio
+|
+|---------------------------------------|-----------------------------|-----------------
+-------------------------------|
+| <code>create_printf_node(fmt_str, args)</code> | <code>NODE_TYPE_PRINTF_STATEMENT</code> | Comando
+<code>printf</code> com mltiplos argumentos. |
+| <code>create_printf_id_node(id)</code> | <code>NODE_TYPE_PRINTF_ID</code> | Impresso direta
+de uma varivel. |
+| <code>create_input_node()</code> | <code>NODE_TYPE_INPUT</code> | Comando de
+entrada <code>input</code>. |</p>
+<h3 id="arrays">Arrays</h3>
+<p>| Funo | Tipo de N | Descrio
+|
+|------------------------------------------------|-----------------------------|--------
+-----------------------------------|
+| <code>create_array_literal_node(elements)</code> | <code>NODE_TYPE_ARRAY_LITERAL</code> | Criao
+de vetor com valores literais. |
+| <code>create_array_access_node(array, index_expr)</code> | <code>NODE_TYPE_ARRAY_ACCESS</code> | Acesso
+a elemento do vetor. |
+| <code>create_array_assignment_node(array_access, expr)</code> | <code>NODE_TYPE_ASSIGNMENT</code> |
+Atribuio de valor a um ndice do vetor. |</p>
+<h3 id="funes">Funes</h3>
+<p>| Funo | Tipo de N | Descrio
+|
+|------------------------------------------------|-----------------------------|--------
+-----------------------------------|
+| <code>create_function_declaration_node(name, body)</code>| <code>NODE_TYPE_FUNCTION_DECL</code> | Declarao
+de uma funo. |
+| <code>create_function_call_node(name, args)</code> | <code>NODE_TYPE_FUNCTION_CALL</code> | Chamada
+de funo. |</p>
+<h2 id="estruturas-de-suporte">Estruturas de Suporte</h2>
+<h3 id="astnodelist"><code>AstNodeList</code></h3>
+<p>Representa uma lista dinmica de ns da AST (como blocos de instrues ou arrays).
+- <code>create_ast_node_list_from_node(node)</code>
+- <code>append_to_ast_node_list(list, node)</code></p>
+<h3 id="argumentnode"><code>ArgumentNode</code></h3>
+<p>Representa uma lista encadeada de argumentos de funo ou <code>printf</code>.
+- <code>create_argument_node(node)</code>
+- <code>free_argument_list(list)</code></p>
+<h2 id="liberao-de-memria">Liberao de Memria</h2>
+<p>A funo <code>free_ast(node)</code> percorre toda a rvore de forma recursiva e libera a memria
+alocada por:
+- Strings duplicadas (<code>strdup</code>)
+- Subns e listas
+- Argumentos
+Ela identifica o tipo de n via <code>node-&gt;type</code> e aplica a liberao correta para cada caso.
+Tambm imprime um erro padro caso o tipo seja desconhecido.</p>
+<h2 id="observaes-importantes">Observaes Importantes</h2>
+<ul>
+<li>A arquitetura separa bem a construo da AST do parsing.</li>
+<li>A AST projetada para <strong>preservar informao de linha</strong>, til para erros e debug.</li>
+<li>possvel expandir facilmente com novos tipos de ns seguindo o mesmo padro.</li>
+</ul>
+<h2 id="exemplos-futuros">Exemplos futuros</h2>
+<p>Em arquivos futuros, como o parser (<code>parser.y</code>) ou interpretador, voc pode usar chamadas
+como:
+AstNode<em> n = create_binary_op_node(a, OP_PLUS, b);
+AstNode</em> stmt = create_if_statement_node(cond, bloco1, bloco2);
+Esses ns so ento ligados rvore de forma recursiva e estruturada.</p>
 
 
 

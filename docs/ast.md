@@ -14,81 +14,60 @@ atual do lexer/parser).
 ## Criao de Ns da AST
 Todos os ns so derivados de `AstNode` e criados com uma funo base:
 static AstNode* create_base_node(AstNodeType type, size_t size);
-Ela aloca memria, atribui o tipo do n e o nmero da linha.
-### Tipos de Ns Literais
-| Funo | Tipo de N | Descrio
-|
-|----------------------------------|----------------------------------|-----------------
------------------------|
-| `create_int_literal_node(int)` | `NODE_TYPE_INT_LITERAL` | Representa um
-nmero inteiro. |
-| `create_float_literal_node(float)` | `NODE_TYPE_FLOAT_LITERAL` | Representa um
-nmero de ponto flutuante. |
-| `create_string_literal_node(char*)` | `NODE_TYPE_STRING_LITERAL` | Representa uma
-string. |
-| `create_identifier_node(char*)` | `NODE_TYPE_IDENTIFIER` | Representa um
-identificador (nome). |
-### Expresses
-| Funo | Tipo de N | Descrio
-|
-|-----------------------------------------------|-----------------------------|---------
------------------------------------|
-| `create_assignment_node(target, op, expr)` | `NODE_TYPE_ASSIGNMENT` | Atribuio
-com operador (ex: `+=`). |
-| `create_binary_op_node(left, op, right)` | `NODE_TYPE_BINARY_OP` | Operao
-binria (`+`, `-`, etc). |
-| `create_unary_op_node(op, operand)` | `NODE_TYPE_UNARY_OP` | Operao
-unria (`!`, `-`, etc). |
-| `create_expression_statement_node(expr)` | `NODE_TYPE_EXPRESSION_STATEMENT` |
-Expresso isolada como instruo. |
+Ela aloca memoria, atribui o tipo do n e o nmero da linha.
+
+### Tipos de Nós Literais
+
+| Função                               | Tipo de Nó                  | Descrição                               |
+| ------------------------------------ | --------------------------- | --------------------------------------- |
+| `create_int_literal_node(int)`       | `NODE_TYPE_INT_LITERAL`     | Representa um número inteiro.           |
+| `create_float_literal_node(float)`   | `NODE_TYPE_FLOAT_LITERAL`   | Representa um número de ponto flutuante.|
+| `create_string_literal_node(char*)`  | `NODE_TYPE_STRING_LITERAL`  | Representa uma string.                  |
+| `create_identifier_node(char*)`      | `NODE_TYPE_IDENTIFIER`      | Representa um identificador (nome).     |
+
+### Expressões
+
+| Função                                     | Tipo de Nó                       | Descrição                                 |
+| ------------------------------------------ | -------------------------------- | ----------------------------------------- |
+| `create_assignment_node(target, op, expr)` | `NODE_TYPE_ASSIGNMENT`           | Atribuição com operador (ex: `+=`).       |
+| `create_binary_op_node(left, op, right)`   | `NODE_TYPE_BINARY_OP`            | Operação binária (`+`, `-`, etc).         |
+| `create_unary_op_node(op, operand)`        | `NODE_TYPE_UNARY_OP`             | Operação unária (`!`, `-`, etc).          |
+| `create_expression_statement_node(expr)`   | `NODE_TYPE_EXPRESSION_STATEMENT` | Expressão isolada como instrução.         |
+
 ### Blocos e Controle de Fluxo
-| Funo | Tipo de N | Descrio
-|
-|---------------------------------------------|---------------------------|-------------
-------------------------------|
-| `create_block_node(statements)` | `NODE_TYPE_BLOCK` | Bloco de
-mltiplas instrues. |
-| `create_if_statement_node(cond, then, else)`| `NODE_TYPE_IF_STATEMENT` | Condicional
-`if`/`else`. |
-| `create_while_node(cond, body)` | `NODE_TYPE_WHILE_LOOP` | Lao `while`.
-|
-| `create_for_node(init, cond, incr, body)` | `NODE_TYPE_FOR_LOOP` | Lao `for`.
-|
-| `create_break_statement_node()` | `NODE_TYPE_BREAK_STATEMENT` | Interrupo
-de lao. |
-| `create_return_statement_node(expr)` | `NODE_TYPE_RETURN_STATEMENT` | Retorno
-de funo. |
-### Entrada e Sada
-| Funo | Tipo de N | Descrio
-|
-|---------------------------------------|-----------------------------|-----------------
--------------------------------|
-| `create_printf_node(fmt_str, args)` | `NODE_TYPE_PRINTF_STATEMENT` | Comando
-`printf` com mltiplos argumentos. |
-| `create_printf_id_node(id)` | `NODE_TYPE_PRINTF_ID` | Impresso direta
-de uma varivel. |
-| `create_input_node()` | `NODE_TYPE_INPUT` | Comando de
-entrada `input`. |
+
+| Função                                      | Tipo de Nó                    | Descrição                               |
+| ------------------------------------------- | ----------------------------- | --------------------------------------- |
+| `create_block_node(statements)`             | `NODE_TYPE_BLOCK`             | Bloco de múltiplas instruções.           |
+| `create_if_statement_node(cond, then, else)`| `NODE_TYPE_IF_STATEMENT`      | Condicional `if`/`else`.                |
+| `create_while_node(cond, body)`             | `NODE_TYPE_WHILE_LOOP`        | Laço `while`.                           |
+| `create_for_node(init, cond, incr, body)`   | `NODE_TYPE_FOR_LOOP`          | Laço `for`.                             |
+| `create_break_statement_node()`             | `NODE_TYPE_BREAK_STATEMENT`   | Interrupção de laço.                    |
+| `create_return_statement_node(expr)`        | `NODE_TYPE_RETURN_STATEMENT`  | Retorno de função.                      |
+
+### Entrada e Saída
+
+| Função                              | Tipo de Nó                   | Descrição                                     |
+| ----------------------------------- | ---------------------------- | --------------------------------------------- |
+| `create_printf_node(fmt_str, args)` | `NODE_TYPE_PRINTF_STATEMENT` | Comando `printf` com múltiplos argumentos.    |
+| `create_printf_id_node(id)`         | `NODE_TYPE_PRINTF_ID`        | Impressão direta de uma variável.             |
+| `create_input_node()`               | `NODE_TYPE_INPUT`            | Comando de entrada `input`.                   |
+
 ### Arrays
-| Funo | Tipo de N | Descrio
-|
-|------------------------------------------------|-----------------------------|--------
------------------------------------|
-| `create_array_literal_node(elements)` | `NODE_TYPE_ARRAY_LITERAL` | Criao
-de vetor com valores literais. |
-| `create_array_access_node(array, index_expr)` | `NODE_TYPE_ARRAY_ACCESS` | Acesso
-a elemento do vetor. |
-| `create_array_assignment_node(array_access, expr)` | `NODE_TYPE_ASSIGNMENT` |
-Atribuio de valor a um ndice do vetor. |
-### Funes
-| Funo | Tipo de N | Descrio
-|
-|------------------------------------------------|-----------------------------|--------
------------------------------------|
-| `create_function_declaration_node(name, body)`| `NODE_TYPE_FUNCTION_DECL` | Declarao
-de uma funo. |
-| `create_function_call_node(name, args)` | `NODE_TYPE_FUNCTION_CALL` | Chamada
-de funo. |
+
+| Função                                         | Tipo de Nó                | Descrição                                     |
+| ---------------------------------------------- | ------------------------- | --------------------------------------------- |
+| `create_array_literal_node(elements)`          | `NODE_TYPE_ARRAY_LITERAL` | Criação de vetor com valores literais.        |
+| `create_array_access_node(array, index_expr)`  | `NODE_TYPE_ARRAY_ACCESS`  | Acesso a elemento do vetor.                   |
+| `create_array_assignment_node(array_access, expr)` | `NODE_TYPE_ASSIGNMENT`    | Atribuição de valor a um índice do vetor.     |
+
+### Funções
+
+| Função                                       | Tipo de Nó                  | Descrição                      |
+| -------------------------------------------- | --------------------------- | ------------------------------ |
+| `create_function_declaration_node(name, body)`| `NODE_TYPE_FUNCTION_DECL`   | Declaração de uma função.      |
+| `create_function_call_node(name, args)`      | `NODE_TYPE_FUNCTION_CALL`   | Chamada de função.             |
+
 ## Estruturas de Suporte
 ### `AstNodeList`
 Representa uma lista dinmica de ns da AST (como blocos de instrues ou arrays).
