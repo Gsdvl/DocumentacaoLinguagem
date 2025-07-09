@@ -319,13 +319,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#criao-de-ns-da-ast" class="md-nav__link">
+  <a href="#criacao-de-nos-da-ast" class="md-nav__link">
     <span class="md-ellipsis">
-      Criao de Ns da AST
+      Criação de Nós da AST
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Criao de Ns da AST">
+    <nav class="md-nav" aria-label="Criação de Nós da AST">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -433,15 +433,6 @@
   <a href="#observaes-importantes" class="md-nav__link">
     <span class="md-ellipsis">
       Observaes Importantes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exemplos-futuros" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemplos futuros
     </span>
   </a>
   
@@ -513,13 +504,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#criao-de-ns-da-ast" class="md-nav__link">
+  <a href="#criacao-de-nos-da-ast" class="md-nav__link">
     <span class="md-ellipsis">
-      Criao de Ns da AST
+      Criação de Nós da AST
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Criao de Ns da AST">
+    <nav class="md-nav" aria-label="Criação de Nós da AST">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -632,15 +623,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#exemplos-futuros" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemplos futuros
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -659,23 +641,21 @@
 
 <p>Documentação da AST</p>
 <h1 id="estrutura-da-ast-astc">Estrutura da AST (<code>ast.c</code>)</h1>
-<p>Este mdulo implementa as funes de construo e gerenciamento da <strong>rvore de Sintaxe
-Abstrata (AST)</strong> da linguagem. Ele responsvel por representar a estrutura lgica do
-cdigo-fonte aps a anlise sinttica, permitindo que fases posteriores como anlise semntica
-e interpretao/executao sejam realizadas.</p>
+<p>Este módulo implementa as funções de construção e gerenciamento da Árvore de Sintaxe Abstrata (AST) da linguagem. 
+Ele é responsável por representar a estrutura lógica do código-fonte após a análise sintática, permitindo que fases posteriores como análise semântica e interpretação/execução sejam realizadas.</p>
 <h2 id="estrutura-geral">Estrutura Geral</h2>
 <ul>
 <li><strong>Arquivo:</strong> <code>ast.c</code></li>
 <li><strong>Cabealhos:</strong> <code>#include "ast.h"</code></li>
-<li><strong>Uso de memria:</strong> Todas as alocaes so feitas via <code>malloc</code>, <code>realloc</code>, <code>strdup</code>, e
+<li><strong>Uso de memória:</strong> Todas as alocações so feitas via <code>malloc</code>, <code>realloc</code>, <code>strdup</code>, e
 liberadas com <code>free</code>.</li>
 <li><strong>Origem da linha:</strong> Cada n da AST marcado com a varivel global <code>yylineno</code> (linha
 atual do lexer/parser).</li>
 </ul>
-<h2 id="criao-de-ns-da-ast">Criao de Ns da AST</h2>
-<p>Todos os ns so derivados de <code>AstNode</code> e criados com uma funo base:
+<h2 id="criacao-de-nos-da-ast">Criação de Nós da AST</h2>
+<p>Todos os nós são derivados de <code>AstNode</code> e criados com uma função base:
 static AstNode* create_base_node(AstNodeType type, size_t size);
-Ela aloca memoria, atribui o tipo do n e o nmero da linha.</p>
+Ela aloca memoria, atribui o tipo do nó e o número da linha.</p>
 <h3 id="tipos-de-nos-literais">Tipos de Nós Literais</h3>
 <table>
 <thead>
@@ -860,33 +840,27 @@ Ela aloca memoria, atribui o tipo do n e o nmero da linha.</p>
 </table>
 <h2 id="estruturas-de-suporte">Estruturas de Suporte</h2>
 <h3 id="astnodelist"><code>AstNodeList</code></h3>
-<p>Representa uma lista dinmica de ns da AST (como blocos de instrues ou arrays).
+<p>Representa uma lista dinmica de nós da AST (como blocos de instrues ou arrays).
 - <code>create_ast_node_list_from_node(node)</code>
 - <code>append_to_ast_node_list(list, node)</code></p>
 <h3 id="argumentnode"><code>ArgumentNode</code></h3>
-<p>Representa uma lista encadeada de argumentos de funo ou <code>printf</code>.
+<p>Representa uma lista encadeada de argumentos de função ou <code>printf</code>.
 - <code>create_argument_node(node)</code>
 - <code>free_argument_list(list)</code></p>
 <h2 id="liberao-de-memria">Liberao de Memria</h2>
-<p>A funo <code>free_ast(node)</code> percorre toda a rvore de forma recursiva e libera a memria
+<p>A funo <code>free_ast(node)</code> percorre toda a árvore de forma recursiva e libera a memória
 alocada por:
 - Strings duplicadas (<code>strdup</code>)
-- Subns e listas
+- Subnós e listas
 - Argumentos
-Ela identifica o tipo de n via <code>node-&gt;type</code> e aplica a liberao correta para cada caso.
-Tambm imprime um erro padro caso o tipo seja desconhecido.</p>
+Ela identifica o tipo de nó via <code>node-&gt;type</code> e aplica a liberação correta para cada caso.
+Também imprime um erro padrão caso o tipo seja desconhecido.</p>
 <h2 id="observaes-importantes">Observaes Importantes</h2>
 <ul>
-<li>A arquitetura separa bem a construo da AST do parsing.</li>
-<li>A AST projetada para <strong>preservar informao de linha</strong>, til para erros e debug.</li>
-<li>possvel expandir facilmente com novos tipos de ns seguindo o mesmo padro.</li>
+<li>A arquitetura separa bem a construção da AST do parsing.</li>
+<li>A AST projetada para <strong>preservar informao de linha</strong>, útil para erros e debug.</li>
+<li>possvel expandir facilmente com novos tipos de nós seguindo o mesmo padrão.</li>
 </ul>
-<h2 id="exemplos-futuros">Exemplos futuros</h2>
-<p>Em arquivos futuros, como o parser (<code>parser.y</code>) ou interpretador, voc pode usar chamadas
-como:
-AstNode<em> n = create_binary_op_node(a, OP_PLUS, b);
-AstNode</em> stmt = create_if_statement_node(cond, bloco1, bloco2);
-Esses ns so ento ligados rvore de forma recursiva e estruturada.</p>
 
 
 
