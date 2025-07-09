@@ -329,18 +329,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tipos-de-ns-literais" class="md-nav__link">
+  <a href="#tipos-de-nos-literais" class="md-nav__link">
     <span class="md-ellipsis">
-      Tipos de Ns Literais
+      Tipos de Nós Literais
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#expresses" class="md-nav__link">
+  <a href="#expressoes" class="md-nav__link">
     <span class="md-ellipsis">
-      Expresses
+      Expressões
     </span>
   </a>
   
@@ -356,9 +356,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#entrada-e-sada" class="md-nav__link">
+  <a href="#entrada-e-saida" class="md-nav__link">
     <span class="md-ellipsis">
-      Entrada e Sada
+      Entrada e Saída
     </span>
   </a>
   
@@ -374,9 +374,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#funes" class="md-nav__link">
+  <a href="#funcoes" class="md-nav__link">
     <span class="md-ellipsis">
-      Funes
+      Funções
     </span>
   </a>
   
@@ -523,18 +523,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tipos-de-ns-literais" class="md-nav__link">
+  <a href="#tipos-de-nos-literais" class="md-nav__link">
     <span class="md-ellipsis">
-      Tipos de Ns Literais
+      Tipos de Nós Literais
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#expresses" class="md-nav__link">
+  <a href="#expressoes" class="md-nav__link">
     <span class="md-ellipsis">
-      Expresses
+      Expressões
     </span>
   </a>
   
@@ -550,9 +550,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#entrada-e-sada" class="md-nav__link">
+  <a href="#entrada-e-saida" class="md-nav__link">
     <span class="md-ellipsis">
-      Entrada e Sada
+      Entrada e Saída
     </span>
   </a>
   
@@ -568,9 +568,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#funes" class="md-nav__link">
+  <a href="#funcoes" class="md-nav__link">
     <span class="md-ellipsis">
-      Funes
+      Funções
     </span>
   </a>
   
@@ -675,81 +675,189 @@ atual do lexer/parser).</li>
 <h2 id="criao-de-ns-da-ast">Criao de Ns da AST</h2>
 <p>Todos os ns so derivados de <code>AstNode</code> e criados com uma funo base:
 static AstNode* create_base_node(AstNodeType type, size_t size);
-Ela aloca memria, atribui o tipo do n e o nmero da linha.</p>
-<h3 id="tipos-de-ns-literais">Tipos de Ns Literais</h3>
-<p>| Funo | Tipo de N | Descrio
-|
-|----------------------------------|----------------------------------|-----------------
------------------------|
-| <code>create_int_literal_node(int)</code> | <code>NODE_TYPE_INT_LITERAL</code> | Representa um
-nmero inteiro. |
-| <code>create_float_literal_node(float)</code> | <code>NODE_TYPE_FLOAT_LITERAL</code> | Representa um
-nmero de ponto flutuante. |
-| <code>create_string_literal_node(char*)</code> | <code>NODE_TYPE_STRING_LITERAL</code> | Representa uma
-string. |
-| <code>create_identifier_node(char*)</code> | <code>NODE_TYPE_IDENTIFIER</code> | Representa um
-identificador (nome). |</p>
-<h3 id="expresses">Expresses</h3>
-<p>| Funo | Tipo de N | Descrio
-|
-|-----------------------------------------------|-----------------------------|---------
------------------------------------|
-| <code>create_assignment_node(target, op, expr)</code> | <code>NODE_TYPE_ASSIGNMENT</code> | Atribuio
-com operador (ex: <code>+=</code>). |
-| <code>create_binary_op_node(left, op, right)</code> | <code>NODE_TYPE_BINARY_OP</code> | Operao
-binria (<code>+</code>, <code>-</code>, etc). |
-| <code>create_unary_op_node(op, operand)</code> | <code>NODE_TYPE_UNARY_OP</code> | Operao
-unria (<code>!</code>, <code>-</code>, etc). |
-| <code>create_expression_statement_node(expr)</code> | <code>NODE_TYPE_EXPRESSION_STATEMENT</code> |
-Expresso isolada como instruo. |</p>
+Ela aloca memoria, atribui o tipo do n e o nmero da linha.</p>
+<h3 id="tipos-de-nos-literais">Tipos de Nós Literais</h3>
+<table>
+<thead>
+<tr>
+<th>Função</th>
+<th>Tipo de Nó</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>create_int_literal_node(int)</code></td>
+<td><code>NODE_TYPE_INT_LITERAL</code></td>
+<td>Representa um número inteiro.</td>
+</tr>
+<tr>
+<td><code>create_float_literal_node(float)</code></td>
+<td><code>NODE_TYPE_FLOAT_LITERAL</code></td>
+<td>Representa um número de ponto flutuante.</td>
+</tr>
+<tr>
+<td><code>create_string_literal_node(char*)</code></td>
+<td><code>NODE_TYPE_STRING_LITERAL</code></td>
+<td>Representa uma string.</td>
+</tr>
+<tr>
+<td><code>create_identifier_node(char*)</code></td>
+<td><code>NODE_TYPE_IDENTIFIER</code></td>
+<td>Representa um identificador (nome).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="expressoes">Expressões</h3>
+<table>
+<thead>
+<tr>
+<th>Função</th>
+<th>Tipo de Nó</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>create_assignment_node(target, op, expr)</code></td>
+<td><code>NODE_TYPE_ASSIGNMENT</code></td>
+<td>Atribuição com operador (ex: <code>+=</code>).</td>
+</tr>
+<tr>
+<td><code>create_binary_op_node(left, op, right)</code></td>
+<td><code>NODE_TYPE_BINARY_OP</code></td>
+<td>Operação binária (<code>+</code>, <code>-</code>, etc).</td>
+</tr>
+<tr>
+<td><code>create_unary_op_node(op, operand)</code></td>
+<td><code>NODE_TYPE_UNARY_OP</code></td>
+<td>Operação unária (<code>!</code>, <code>-</code>, etc).</td>
+</tr>
+<tr>
+<td><code>create_expression_statement_node(expr)</code></td>
+<td><code>NODE_TYPE_EXPRESSION_STATEMENT</code></td>
+<td>Expressão isolada como instrução.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="blocos-e-controle-de-fluxo">Blocos e Controle de Fluxo</h3>
-<p>| Funo | Tipo de N | Descrio
-|
-|---------------------------------------------|---------------------------|-------------
-------------------------------|
-| <code>create_block_node(statements)</code> | <code>NODE_TYPE_BLOCK</code> | Bloco de
-mltiplas instrues. |
-| <code>create_if_statement_node(cond, then, else)</code>| <code>NODE_TYPE_IF_STATEMENT</code> | Condicional
-<code>if</code>/<code>else</code>. |
-| <code>create_while_node(cond, body)</code> | <code>NODE_TYPE_WHILE_LOOP</code> | Lao <code>while</code>.
-|
-| <code>create_for_node(init, cond, incr, body)</code> | <code>NODE_TYPE_FOR_LOOP</code> | Lao <code>for</code>.
-|
-| <code>create_break_statement_node()</code> | <code>NODE_TYPE_BREAK_STATEMENT</code> | Interrupo
-de lao. |
-| <code>create_return_statement_node(expr)</code> | <code>NODE_TYPE_RETURN_STATEMENT</code> | Retorno
-de funo. |</p>
-<h3 id="entrada-e-sada">Entrada e Sada</h3>
-<p>| Funo | Tipo de N | Descrio
-|
-|---------------------------------------|-----------------------------|-----------------
--------------------------------|
-| <code>create_printf_node(fmt_str, args)</code> | <code>NODE_TYPE_PRINTF_STATEMENT</code> | Comando
-<code>printf</code> com mltiplos argumentos. |
-| <code>create_printf_id_node(id)</code> | <code>NODE_TYPE_PRINTF_ID</code> | Impresso direta
-de uma varivel. |
-| <code>create_input_node()</code> | <code>NODE_TYPE_INPUT</code> | Comando de
-entrada <code>input</code>. |</p>
+<table>
+<thead>
+<tr>
+<th>Função</th>
+<th>Tipo de Nó</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>create_block_node(statements)</code></td>
+<td><code>NODE_TYPE_BLOCK</code></td>
+<td>Bloco de múltiplas instruções.</td>
+</tr>
+<tr>
+<td><code>create_if_statement_node(cond, then, else)</code></td>
+<td><code>NODE_TYPE_IF_STATEMENT</code></td>
+<td>Condicional <code>if</code>/<code>else</code>.</td>
+</tr>
+<tr>
+<td><code>create_while_node(cond, body)</code></td>
+<td><code>NODE_TYPE_WHILE_LOOP</code></td>
+<td>Laço <code>while</code>.</td>
+</tr>
+<tr>
+<td><code>create_for_node(init, cond, incr, body)</code></td>
+<td><code>NODE_TYPE_FOR_LOOP</code></td>
+<td>Laço <code>for</code>.</td>
+</tr>
+<tr>
+<td><code>create_break_statement_node()</code></td>
+<td><code>NODE_TYPE_BREAK_STATEMENT</code></td>
+<td>Interrupção de laço.</td>
+</tr>
+<tr>
+<td><code>create_return_statement_node(expr)</code></td>
+<td><code>NODE_TYPE_RETURN_STATEMENT</code></td>
+<td>Retorno de função.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="entrada-e-saida">Entrada e Saída</h3>
+<table>
+<thead>
+<tr>
+<th>Função</th>
+<th>Tipo de Nó</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>create_printf_node(fmt_str, args)</code></td>
+<td><code>NODE_TYPE_PRINTF_STATEMENT</code></td>
+<td>Comando <code>printf</code> com múltiplos argumentos.</td>
+</tr>
+<tr>
+<td><code>create_printf_id_node(id)</code></td>
+<td><code>NODE_TYPE_PRINTF_ID</code></td>
+<td>Impressão direta de uma variável.</td>
+</tr>
+<tr>
+<td><code>create_input_node()</code></td>
+<td><code>NODE_TYPE_INPUT</code></td>
+<td>Comando de entrada <code>input</code>.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="arrays">Arrays</h3>
-<p>| Funo | Tipo de N | Descrio
-|
-|------------------------------------------------|-----------------------------|--------
------------------------------------|
-| <code>create_array_literal_node(elements)</code> | <code>NODE_TYPE_ARRAY_LITERAL</code> | Criao
-de vetor com valores literais. |
-| <code>create_array_access_node(array, index_expr)</code> | <code>NODE_TYPE_ARRAY_ACCESS</code> | Acesso
-a elemento do vetor. |
-| <code>create_array_assignment_node(array_access, expr)</code> | <code>NODE_TYPE_ASSIGNMENT</code> |
-Atribuio de valor a um ndice do vetor. |</p>
-<h3 id="funes">Funes</h3>
-<p>| Funo | Tipo de N | Descrio
-|
-|------------------------------------------------|-----------------------------|--------
------------------------------------|
-| <code>create_function_declaration_node(name, body)</code>| <code>NODE_TYPE_FUNCTION_DECL</code> | Declarao
-de uma funo. |
-| <code>create_function_call_node(name, args)</code> | <code>NODE_TYPE_FUNCTION_CALL</code> | Chamada
-de funo. |</p>
+<table>
+<thead>
+<tr>
+<th>Função</th>
+<th>Tipo de Nó</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>create_array_literal_node(elements)</code></td>
+<td><code>NODE_TYPE_ARRAY_LITERAL</code></td>
+<td>Criação de vetor com valores literais.</td>
+</tr>
+<tr>
+<td><code>create_array_access_node(array, index_expr)</code></td>
+<td><code>NODE_TYPE_ARRAY_ACCESS</code></td>
+<td>Acesso a elemento do vetor.</td>
+</tr>
+<tr>
+<td><code>create_array_assignment_node(array_access, expr)</code></td>
+<td><code>NODE_TYPE_ASSIGNMENT</code></td>
+<td>Atribuição de valor a um índice do vetor.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="funcoes">Funções</h3>
+<table>
+<thead>
+<tr>
+<th>Função</th>
+<th>Tipo de Nó</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>create_function_declaration_node(name, body)</code></td>
+<td><code>NODE_TYPE_FUNCTION_DECL</code></td>
+<td>Declaração de uma função.</td>
+</tr>
+<tr>
+<td><code>create_function_call_node(name, args)</code></td>
+<td><code>NODE_TYPE_FUNCTION_CALL</code></td>
+<td>Chamada de função.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="estruturas-de-suporte">Estruturas de Suporte</h2>
 <h3 id="astnodelist"><code>AstNodeList</code></h3>
 <p>Representa uma lista dinmica de ns da AST (como blocos de instrues ou arrays).

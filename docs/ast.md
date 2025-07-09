@@ -1,20 +1,18 @@
 Documentação da AST
 # Estrutura da AST (`ast.c`)
-Este mdulo implementa as funes de construo e gerenciamento da **rvore de Sintaxe
-Abstrata (AST)** da linguagem. Ele responsvel por representar a estrutura lgica do
-cdigo-fonte aps a anlise sinttica, permitindo que fases posteriores como anlise semntica
-e interpretao/executao sejam realizadas.
+Este módulo implementa as funções de construção e gerenciamento da Árvore de Sintaxe Abstrata (AST) da linguagem. 
+Ele é responsável por representar a estrutura lógica do código-fonte após a análise sintática, permitindo que fases posteriores como análise semântica e interpretação/execução sejam realizadas.
 ## Estrutura Geral
 - **Arquivo:** `ast.c`
 - **Cabealhos:** `#include "ast.h"`
-- **Uso de memria:** Todas as alocaes so feitas via `malloc`, `realloc`, `strdup`, e
+- **Uso de memória:** Todas as alocações so feitas via `malloc`, `realloc`, `strdup`, e
 liberadas com `free`.
 - **Origem da linha:** Cada n da AST marcado com a varivel global `yylineno` (linha
 atual do lexer/parser).
-## Criao de Ns da AST
-Todos os ns so derivados de `AstNode` e criados com uma funo base:
+## Criação de Nós da AST
+Todos os nós são derivados de `AstNode` e criados com uma função base:
 static AstNode* create_base_node(AstNodeType type, size_t size);
-Ela aloca memoria, atribui o tipo do n e o nmero da linha.
+Ela aloca memoria, atribui o tipo do nó e o número da linha.
 
 ### Tipos de Nós Literais
 
@@ -70,28 +68,22 @@ Ela aloca memoria, atribui o tipo do n e o nmero da linha.
 
 ## Estruturas de Suporte
 ### `AstNodeList`
-Representa uma lista dinmica de ns da AST (como blocos de instrues ou arrays).
+Representa uma lista dinmica de nós da AST (como blocos de instrues ou arrays).
 - `create_ast_node_list_from_node(node)`
 - `append_to_ast_node_list(list, node)`
 ### `ArgumentNode`
-Representa uma lista encadeada de argumentos de funo ou `printf`.
+Representa uma lista encadeada de argumentos de função ou `printf`.
 - `create_argument_node(node)`
 - `free_argument_list(list)`
 ## Liberao de Memria
-A funo `free_ast(node)` percorre toda a rvore de forma recursiva e libera a memria
+A funo `free_ast(node)` percorre toda a árvore de forma recursiva e libera a memória
 alocada por:
 - Strings duplicadas (`strdup`)
-- Subns e listas
+- Subnós e listas
 - Argumentos
-Ela identifica o tipo de n via `node->type` e aplica a liberao correta para cada caso.
-Tambm imprime um erro padro caso o tipo seja desconhecido.
+Ela identifica o tipo de nó via `node->type` e aplica a liberação correta para cada caso.
+Também imprime um erro padrão caso o tipo seja desconhecido.
 ## Observaes Importantes
-- A arquitetura separa bem a construo da AST do parsing.
-- A AST projetada para **preservar informao de linha**, til para erros e debug.
-- possvel expandir facilmente com novos tipos de ns seguindo o mesmo padro.
-## Exemplos futuros
-Em arquivos futuros, como o parser (`parser.y`) ou interpretador, voc pode usar chamadas
-como:
-AstNode* n = create_binary_op_node(a, OP_PLUS, b);
-AstNode* stmt = create_if_statement_node(cond, bloco1, bloco2);
-Esses ns so ento ligados rvore de forma recursiva e estruturada.
+- A arquitetura separa bem a construção da AST do parsing.
+- A AST projetada para **preservar informao de linha**, útil para erros e debug.
+- possvel expandir facilmente com novos tipos de nós seguindo o mesmo padrão.
