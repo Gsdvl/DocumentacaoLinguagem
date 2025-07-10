@@ -7,5 +7,10 @@ nav:
   - Léxico: lexer.md
   - Sintaxe: parser.md
   - AST: ast.md
-  - Execução: semantics.md
-  - Geral: geral.md
+  - Execução: execution.md
+
+plugins:
+  - search
+  - pdf-export:
+      combined: true
+      media_type: print

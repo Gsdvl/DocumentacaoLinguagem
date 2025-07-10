@@ -1,4 +1,4 @@
-# 🔑 Palavras Reservadas da Linguagem G2DL
+#  Palavras Reservadas da Linguagem G2DL
 
 Palavras reservadas são identificadores especiais que **não podem ser usados como nomes de variáveis, funções ou objetos**, pois possuem um **significado fixo** na linguagem. Elas fazem parte da **gramática principal** e são reconhecidas diretamente pelo analisador léxico.
 
@@ -6,7 +6,7 @@ Abaixo está a lista completa das palavras reservadas da linguagem G2DL, junto c
 
 ---
 
-## 🧠 Controle de Fluxo
+##  Controle de Fluxo
 
 | Palavra       | Função                                                                 |
 |---------------|------------------------------------------------------------------------|
@@ -18,7 +18,7 @@ Abaixo está a lista completa das palavras reservadas da linguagem G2DL, junto c
 
 ---
 
-## 🧮 Funções e Retornos
+##  Funções e Retornos
 
 | Palavra       | Função                                                                 |
 |---------------|------------------------------------------------------------------------|
@@ -27,7 +27,7 @@ Abaixo está a lista completa das palavras reservadas da linguagem G2DL, junto c
 
 ---
 
-## 🔢 Valores Literais
+##  Valores Literais
 
 | Palavra       | Função                                                                 |
 |---------------|------------------------------------------------------------------------|
@@ -36,7 +36,7 @@ Abaixo está a lista completa das palavras reservadas da linguagem G2DL, junto c
 
 ---
 
-## 🖨️ Entrada e Saída
+##  Entrada e Saída
 
 | Palavra       | Função                                                                 |
 |---------------|------------------------------------------------------------------------|
@@ -45,7 +45,7 @@ Abaixo está a lista completa das palavras reservadas da linguagem G2DL, junto c
 
 ---
 
-## 🛡️ Observações
+##  Observações
 
 - Todas essas palavras são reconhecidas diretamente pelo **lexer** e não exigem nenhuma declaração prévia.
 - Elas **não podem ser sobrescritas** (por exemplo, não é possível criar uma função chamada `if`).
@@ -53,7 +53,7 @@ Abaixo está a lista completa das palavras reservadas da linguagem G2DL, junto c
 
 ---
 
-## 🧪 Exemplo de uso
+##  Exemplo de uso
 
 ```c
 function somar(a, b) {
