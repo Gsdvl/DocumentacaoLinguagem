@@ -55,7 +55,7 @@ Abaixo está a lista completa das palavras reservadas da linguagem G2DL, junto c
 
 ## 🧪 Exemplo de uso
 
-```bash
+```c
 function somar(a, b) {
     if (a > b) {
         printf("a é maior");
@@ -64,3 +64,4 @@ function somar(a, b) {
     }
     return a + b;
 }
+```

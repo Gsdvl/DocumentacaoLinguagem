@@ -8,3 +8,4 @@ nav:
   - Sintaxe: parser.md
   - AST: ast.md
   - Execução: semantics.md
+  - Geral: geral.md
