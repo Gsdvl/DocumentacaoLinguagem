@@ -421,18 +421,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#liberao-de-memria" class="md-nav__link">
+  <a href="#liberacao-de-memoria" class="md-nav__link">
     <span class="md-ellipsis">
-      Liberao de Memria
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#observaes-importantes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Observaes Importantes
+      Liberação de Memória
     </span>
   </a>
   
@@ -606,18 +597,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#liberao-de-memria" class="md-nav__link">
+  <a href="#liberacao-de-memoria" class="md-nav__link">
     <span class="md-ellipsis">
-      Liberao de Memria
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#observaes-importantes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Observaes Importantes
+      Liberação de Memória
     </span>
   </a>
   
@@ -847,20 +829,15 @@ Ela aloca memoria, atribui o tipo do nó e o número da linha.</p>
 <p>Representa uma lista encadeada de argumentos de função ou <code>printf</code>.
 - <code>create_argument_node(node)</code>
 - <code>free_argument_list(list)</code></p>
-<h2 id="liberao-de-memria">Liberao de Memria</h2>
-<p>A funo <code>free_ast(node)</code> percorre toda a árvore de forma recursiva e libera a memória
+<h2 id="liberacao-de-memoria">Liberação de Memória</h2>
+<p>A função <code>free_ast(node)</code> percorre toda a árvore de forma recursiva e libera a memória
 alocada por:
 - Strings duplicadas (<code>strdup</code>)
 - Subnós e listas
 - Argumentos
 Ela identifica o tipo de nó via <code>node-&gt;type</code> e aplica a liberação correta para cada caso.
-Também imprime um erro padrão caso o tipo seja desconhecido.</p>
-<h2 id="observaes-importantes">Observaes Importantes</h2>
-<ul>
-<li>A arquitetura separa bem a construção da AST do parsing.</li>
-<li>A AST projetada para <strong>preservar informao de linha</strong>, útil para erros e debug.</li>
-<li>possvel expandir facilmente com novos tipos de nós seguindo o mesmo padrão.</li>
-</ul>
+Também imprime um erro padrão caso o tipo seja desconhecido.
+- A AST é projetada para <strong>preservar informao de linha</strong>, útil para erros e debug.</p>
 
 
 
