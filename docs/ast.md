@@ -75,15 +75,12 @@ Representa uma lista dinmica de nós da AST (como blocos de instrues ou arrays).
 Representa uma lista encadeada de argumentos de função ou `printf`.
 - `create_argument_node(node)`
 - `free_argument_list(list)`
-## Liberao de Memria
-A funo `free_ast(node)` percorre toda a árvore de forma recursiva e libera a memória
+## Liberação de Memória
+A função `free_ast(node)` percorre toda a árvore de forma recursiva e libera a memória
 alocada por:
 - Strings duplicadas (`strdup`)
 - Subnós e listas
 - Argumentos
 Ela identifica o tipo de nó via `node->type` e aplica a liberação correta para cada caso.
 Também imprime um erro padrão caso o tipo seja desconhecido.
-## Observaes Importantes
-- A arquitetura separa bem a construção da AST do parsing.
-- A AST projetada para **preservar informao de linha**, útil para erros e debug.
-- possvel expandir facilmente com novos tipos de nós seguindo o mesmo padrão.
+- A AST é projetada para **preservar informao de linha**, útil para erros e debug.
