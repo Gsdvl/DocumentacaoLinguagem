@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#g2dl-interpretador-de-linguagem" class="md-skip">
+        <a href="#comandos-make-disponiveis" class="md-skip">
           Skip to content
         </a>
       
@@ -286,8 +286,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -320,8 +318,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -330,69 +326,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#compilacao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Compilação
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execucao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Execução
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#organizacao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Organização
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#comandos-make-disponiveis" class="md-nav__link">
     <span class="md-ellipsis">
       Comandos Make Disponíveis
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Comandos Make Disponíveis">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exemplo-de-uso-do-clean" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemplo de uso do clean:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exemplo-de-script-g2dl" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemplo de Script .g2dl
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#requisitos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Requisitos
     </span>
   </a>
   
@@ -423,8 +359,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -433,69 +367,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#compilacao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Compilação
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execucao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Execução
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#organizacao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Organização
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#comandos-make-disponiveis" class="md-nav__link">
     <span class="md-ellipsis">
       Comandos Make Disponíveis
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Comandos Make Disponíveis">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exemplo-de-uso-do-clean" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemplo de uso do clean:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exemplo-de-script-g2dl" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemplo de Script .g2dl
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#requisitos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Requisitos
     </span>
   </a>
   
@@ -517,45 +391,11 @@
 
 
 
-<h1 id="g2dl-interpretador-de-linguagem">G2DL - Interpretador de Linguagem</h1>
-<hr />
-<h2 id="compilacao">Compilação</h2>
-<p>Para compilar o projeto, utilize o comando:</p>
-<pre><code class="language-bash">make
-</code></pre>
-<p>Esse comando executa os seguintes passos automaticamente:</p>
-<ul>
-<li>Gera o analisador léxico com Flex</li>
-<li>Gera o analisador sintático com Bison</li>
-<li>Compila todos os arquivos .c</li>
-<li>Organiza os .o em build/</li>
-<li>Cria o executável final em bin/g2dl_interpreter</li>
-</ul>
-<hr />
-<h2 id="execucao">Execução</h2>
-<p>Após a compilação, o executável estará disponível em:</p>
-<p>bin/g2dl_interpreter</p>
-<p>Para executar um programa da linguagem G2DL, use:</p>
-<pre><code class="language-bash">./bin/g2dl_interpreter arquivo.g2dl
-</code></pre>
-<blockquote>
-<p>Certifique-se de que o main.c está preparado para ler o arquivo de entrada.</p>
-</blockquote>
-<hr />
-<h2 id="organizacao">Organização</h2>
-<pre><code>├── Makefile
-├── src/
-│   ├── main.c
-│   ├── ast/
-│   ├── lexer/
-│   ├── parser/
-│   ├── interpreter/
-│   └── utils/
-├── build/         # Criado automaticamente
-├── bin/           # Criado automaticamente
-└── include/       # Headers, se usados
-</code></pre>
-<hr />
+  <h1>Execução</h1>
+
+<ol>
+<li>Instruções de Uso do Compilador</li>
+</ol>
 <h2 id="comandos-make-disponiveis">Comandos Make Disponíveis</h2>
 <p>Você pode usar os seguintes comandos com make:</p>
 <table>
@@ -584,28 +424,28 @@
 </tr>
 </tbody>
 </table>
-<h3 id="exemplo-de-uso-do-clean">Exemplo de uso do clean:</h3>
-<pre><code class="language-bash">make clean
-</code></pre>
-<p>Limpa todos os arquivos de build e recompila:</p>
-<pre><code class="language-bash">make clean
-make
-</code></pre>
-<hr />
-<h2 id="exemplo-de-script-g2dl">Exemplo de Script .g2dl</h2>
-<pre><code class="language-c">a = 10;
-b = 5;
-soma = a + b;
-printf(&quot;Resultado: %d\\n&quot;, soma);
-
-mensagem = &quot;Olá, &quot; + &quot;G2DL!&quot;;
-printf(&quot;%s\\n&quot;, mensagem);
-</code></pre>
-<hr />
-<h2 id="requisitos">Requisitos</h2>
-<p>Certifique-se de ter as ferramentas necessárias:</p>
-<pre><code class="language-bash">sudo apt install build-essential flex bison
-</code></pre>
+<p>Para gerar e utilizar o compilador G2DL, siga os passos abaixo:
+Passo 1: Gerar o Compilador
+Para compilar o código-fonte da linguagem e gerar o executável do compilador, navegue até o diretório raiz do projeto no seu terminal e execute o comando make:
+Bash
+$ make</p>
+<p>Esse comando executa os seguintes passos automaticamente:</p>
+<ul>
+<li>Gera o analisador léxico com Flex</li>
+<li>Gera o analisador sintático com Bison</li>
+<li>Compila todos os arquivos .c</li>
+<li>Organiza os .o em build/</li>
+<li>Cria o executável final em bin/g2dl_interpreter</li>
+</ul>
+<p>Passo 2: Executar o Compilador
+Após a compilação, o executável do compilador será gerado. Você pode utilizá-lo para processar um arquivo de código-fonte da linguagem G2DL. Por exemplo, para compilar o arquivo input.txt, utilize o seguinte comando:
+Bash
+$ ./compiler_g2dl input.txt</p>
+<p>Certifique-se de substituir input.txt pelo nome do arquivo de código-fonte que deseja compilar.
+Passo Extra: Limpar o Compilador
+Para remover os arquivos gerados durante o processo de compilação (como os arquivos objeto e o executável do compilador), você pode usar o comando make clean:
+Bash
+$ make clean</p>
 
 
 
