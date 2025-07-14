@@ -6,6 +6,7 @@ nav:
   - Início: index.md
   - Léxico: lexer.md
   - AST: ast.md
+  - Verificação: verificacao.md
   - Execução: execution.md
 
 plugins:
