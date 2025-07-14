@@ -5,7 +5,6 @@ theme:
 nav:
   - Início: index.md
   - Léxico: lexer.md
-  - Sintaxe: parser.md
   - AST: ast.md
   - Execução: execution.md
 
