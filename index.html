@@ -201,6 +201,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Início
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="." class="md-nav__link md-nav__link--active">
         
   
@@ -212,6 +225,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cabecalho-e-documentacao-online" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cabeçalho e documentação online
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visão geral
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -325,6 +375,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cabecalho-e-documentacao-online" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cabeçalho e documentação online
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visão geral
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -340,6 +416,16 @@
 
 
 <h1 id="1-introducao-visao-geral-do-projeto">1. Introdução: Visão Geral do Projeto</h1>
+<h2 id="cabecalho-e-documentacao-online">Cabeçalho e documentação online</h2>
+<p><a href="https://gsdvl.github.io/DocumentacaoLinguagem/">https://gsdvl.github.io/DocumentacaoLinguagem/</a></p>
+<p><strong>Disciplina:</strong> Engenharia de Linguagens - DIM0548</p>
+<p><strong>Integrantes do Grupo:</strong>
+- Gabriel Victor de Lima Pimentel<br />
+- Zeus Justino de Lima<br />
+- Lucas Nogueira Cortez<br />
+- Gabriel Soares de Vasconcelos Lira<br />
+- Débora Noemy de Alcântara Valentim</p>
+<h2 id="visao-geral">Visão geral</h2>
 <p>Este documento detalha o projeto e a implementação da G2DL, uma nova linguagem de programação imperativa desenvolvida para a disciplina DIM0548 - Engenharia de Linguagens da Universidade Federal do Rio Grande do Norte. Com foco particular na área de Ciência de Dados e Aprendizado de Máquina, a linguagem foi cuidadosamente planejada para equilibrar legibilidade, facilidade de escrita, confiabilidade e custo, visando um sistema robusto e eficiente para seu domínio de aplicação.</p>
 <p>A G2DL apresenta uma sintaxe clara e expressiva, suporta tipagem estática (com tipos determinados em tempo de compilação para maior segurança), e oferece suporte a tipos de dados abstratos, como dataframes e tensores, com sobrecarga de operadores para manipulação eficiente. Sua concepção híbrida é inspirada na sintaxe limpa e expressividade do Python, na eficiência e robustez de C e GoLang, e nas estruturas de dados primitivas do R. O sistema de implementação idealizado é a interpretação, crucial para a exploração rápida de dados e prototipagem no domínio de Ciência de Dados.</p>
 <p>Atualmente, o design da linguagem impõe certas limitações deliberadas para otimização de recursos e clareza. Não há intenção de implementar mecanismos para alocação explícita de variáveis de escopo local na heap, e o tratamento de aliasing é delegado à responsabilidade do programador para poupar recursos. O tratamento completo de exceções é uma funcionalidade que ainda está em desenvolvimento. O projeto abrange as fases principais de um compilador, incluindo a análise léxica e a análise sintática, esta última com a construção de um analisador LALR bottom-up.</p>
